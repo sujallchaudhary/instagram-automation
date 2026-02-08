@@ -38,6 +38,7 @@ exports.generatePost = async (req, res) => {
         res.render('review', {
             data: {
                 generatedCaption: result.generated_content,
+                generatedHashtags: [],
                 imagePrompt: result.image_prompt,
                 imageUrl: result.image_url,
                 topic: result.topic
@@ -69,6 +70,7 @@ exports.renderReview = async (req, res) => {
         res.render('review', {
             data: {
                 generatedCaption: result.generated_content,
+                generatedHashtags: [],
                 imagePrompt: result.image_prompt,
                 imageUrl: result.image_url,
                 topic: result.topic
@@ -129,6 +131,7 @@ exports.handleDecision = async (req, res) => {
             res.render('review', {
                 data: {
                     generatedCaption: result.generated_content,
+                    generatedHashtags: [],
                     imagePrompt: result.image_prompt,
                     imageUrl: result.image_url,
                     topic: result.topic
@@ -142,6 +145,7 @@ exports.handleDecision = async (req, res) => {
             return res.render('review', {
                 data: {
                     generatedCaption: snapshot?.values?.generated_content,
+                    generatedHashtags: [],
                     imagePrompt: snapshot?.values?.image_prompt,
                     imageUrl: snapshot?.values?.image_url,
                     topic: snapshot?.values?.topic
